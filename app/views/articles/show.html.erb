@@ -16,6 +16,7 @@
 
 <h2>Comments(<%= @article.comments.size %>)</h2>
 
+<% if logged_in? %>
 
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
@@ -27,3 +28,5 @@
     data: {confirm: "Really delete the article?"} %>
 
 <%= link_to "Edit", edit_article_path(@article) %>
+
+<% end %>
